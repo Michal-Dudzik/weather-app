@@ -7,7 +7,7 @@ import Forecast from './components/Forecast';
 import getWeatherData from './services/weatherService';
 import getFormattedWeatherData from './services/weatherService';
 import { useEffect, useState } from 'react';
-// import GoogleMap from '@react-google-maps/api';
+import MapContainer from './components/Map';
 
 function App() {
 	const [query, setQuery] = useState({
@@ -36,9 +36,9 @@ function App() {
 
 	return (
 		<div>
-			{/* <GoogleMap zoom={10} center={{ lat: 44, lng: -70 }}></GoogleMap>; */}
+			<MapContainer />
 			<div
-				className={` mx-auto max-w-screen-md mt-4 py-5 px-32 bg-gradient-to-br from-cyan-700 to-blue-700 h-fit shadow-xl shadow-grey-400 ${formatBackground()} `}>
+				className={`absolute left-1/2 opacity-95 mx-auto max-w-screen-md mt-4 py-5 px-32 bg-gradient-to-br from-cyan-700 to-blue-700 h-fit shadow-xl shadow-grey-400 ${formatBackground()} `}>
 				<TopButtons setQuery={setQuery}></TopButtons>
 				<Inputs setQuery={setQuery} units={units} setUnits={setUnits}></Inputs>
 
